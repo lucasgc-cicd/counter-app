@@ -30,10 +30,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 USER appuser
 
 # Copiar o código python para o container.
-COPY counter-service.py .
+COPY counter-app.py .
 
 # Deixar porta 8080/tcp em listen no container para a app
 EXPOSE 8080
 
 # Rodar o http server wsgi python gunicorn com logs habilitados
-CMD ["gunicorn", "counter-service:app", "--bind", "0.0.0.0:8080", "--access-logfile", "-", "--error-logfile", "-"]
+CMD ["gunicorn", "counter-app:app", "--bind", "0.0.0.0:8080", "--access-logfile", "-", "--error-logfile", "-"]
