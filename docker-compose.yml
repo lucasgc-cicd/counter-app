@@ -2,7 +2,7 @@ version: '2.4' # Suporte para limit memória e cpu
 services:
   counter-service:
     container_name: counter-app
-    image: 354918405503.dkr.ecr.us-east-1.amazonaws.com/counter-app/counter-app:latest
+    image: 354918405503.dkr.ecr.us-east-1.amazonaws.com/counter-app:latest
     volumes:
       - ./data:/data
     ports:
