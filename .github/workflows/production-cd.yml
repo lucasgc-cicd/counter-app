@@ -26,7 +26,7 @@ jobs:
 
     - name: Deploy to EC2
       env:
-        EC2_PEM_KEY: ${{ secrets.EC2_PEM_KEY }}
+        EC2_PEM_KEY: ${{ secrets.AWS_PEM }}
         EC2_HOST: ${{ secrets.AWS_HOST }}
         EC2_USER: ${{ secrets.AWS_USER }}
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
@@ -34,7 +34,7 @@ jobs:
         IMAGE_TAG: latest
       run: |
         # Save PEM key to file and set permissions
-        echo "$AWS_PEM" > ec2.pem
+        echo "$EC2_PEM_KEY" > ec2.pem
         chmod 400 ec2.pem
 
         # SSH, SCP commands
