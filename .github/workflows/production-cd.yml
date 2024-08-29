@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  deploy-app:
     runs-on: ubuntu-latest
     environment: prod
 
